@@ -2,29 +2,27 @@ function getComputerChoice(){
     return Math.random();
 }
 
-const computerchoice = getComputerChoice();
-
 function transformComputerChoice(){
-
-    if (computerchoice <= .33333){
+var computerChoice = getComputerChoice();
+    if (computerChoice <= .33333){
         return "Rock";
     }
-    else if (computerchoice >.33334 && computerchoice <= .66666){
+    else if (computerChoice >.33334 && computerChoice <= .66666){
         return "Paper";
     }
-    else if (computerchoice > .66667){
+    else if (computerChoice > .66667){
         return "Scissors";
     }
 }
 
 function getHumanChoice(){
-    const humanchoice = prompt("Rock, Paper, or Scissors?");
-    return humanchoice;
+    return prompt("Rock, Paper, or Scissors?");
 }
 
 function playRound(){
-    let humanchoice = getHumanChoice();
-    let transformedcomputerchoice = transformComputerChoice();
+    var humanchoice = getHumanChoice();
+    var transformedcomputerchoice = transformComputerChoice();
+    alert("Computer chose: " + transformedcomputerchoice);
 
     if (humanchoice == transformedcomputerchoice){
         alert("Draw!");
@@ -47,13 +45,20 @@ function playRound(){
     else if (humanchoice =="Scissors" && transformedcomputerchoice =="Rock"){
         alert("You Lose with Scissors!");
     }
-    else alert(humanchoice);
-    
-    
 }
 
+function playGame (){
 
-/*console.log(getHumanChoice());*/
+    for (let i = 0; i < 5; i++){
+        playRound();
+    }
+}
+
+/*const humanchoice = getHumanChoice();
+const transformedcomputerchoice = transformComputerChoice();
+console.log(getHumanChoice());
 console.log(computerchoice);
-console.log(transformComputerChoice());
-console.log(playRound());
+console.log("Human chose: " + humanchoice);
+console.log("Computer chose: " + transformComputerChoice());*/
+
+console.log(playGame());
